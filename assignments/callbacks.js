@@ -69,9 +69,13 @@ contains("blob", ["bob","john","dave"],console.log)
 
 
 /* STRETCH PROBLEM */
-
-function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
+// removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+function removeDuplicates(array, cb) {
+  let mySet = new Set(array);
+  let newArray = Array.from(mySet);
+  return cb(newArray);
 }
+
+removeDuplicates([5,5,4,6,8,9,9,5],console.log)
