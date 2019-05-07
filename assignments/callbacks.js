@@ -25,26 +25,48 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 */
 
 
-function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
-}
+// getLength passes the length of the array into the callback.
 
-function last(arr, cb) {
-  // last passes the last item of the array into the callback.
-}
+const getLength = (arr, cb) => cb(arr.length)
 
-function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+getLength(items, function(length) {
+  console.log (length)
+})
 
-function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
-}
+// last passes the last item of the array into the callback.
+const last = (arr, cb) => cb(arr[arr.length-1])
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
+last(items, function(lastItem) {
+  console.log(lastItem)
+})
+
+// sumNums adds two numbers (x, y) and passes the result to the callback.
+const sumNums = (x, y, cb) => cb(x+y)
+
+sumNums(3,5, function(nums) {
+  console.log(nums)
+})
+
+sumNums(2,4,console.log)
+
+// multiplyNums multiplies two numbers and passes the result to the callback.
+const multiplyNums = (x, y, cb) => cb(x*y)
+
+multiplyNums(5,5,console.log)
+
+// contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+const contains = (item, list, cb) => {
+  const result = list.filter(word => word === item)
+  if (result.length === 0) {
+    return cb(false);
+  }
+  else {return cb(true);}
 }
+
+contains("bob", ["bob","john","dave"],console.log)
+contains("blob", ["bob","john","dave"],console.log)
+
 
 /* STRETCH PROBLEM */
 
