@@ -1,6 +1,27 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function USA() {
+  const president = 'Donald Trump'
+  console.log(`${president} is our president.`)
+  
+  california()
+
+  function california() {
+    const governor = 'Gavin Newsom'
+    console.log(`${governor} answers to ${president}`)
+
+    riverside()
+
+    function riverside() {
+      const overlord = 'Jack Ober'
+      console.log(`${governor} and ${president} bend the knee to ${overlord}`)
+
+    }
+  }
+}
+
+USA()
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
